@@ -40,7 +40,7 @@ export default function AppPage() {
                 disabled={i > step}
                 aria-current={i === step ? 'step' : undefined}
               >
-                <span className="wizard-nav__num">{i + 1}</span>
+                <span className="wizard-nav__num">{i < step ? '\u2713' : i + 1}</span>
                 <span className="wizard-nav__label">{label}</span>
               </button>
             ))}
@@ -48,7 +48,7 @@ export default function AppPage() {
         )}
       </header>
 
-      <main className="app-main">
+      <main className="app-main" key={step}>
         {step === 0 && <BrandInput initialValue={description} onGenerate={generate} />}
         {step === 1 && palette && (
           <ColorPalette palette={palette} onNext={() => setStep(2)} />

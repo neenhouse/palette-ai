@@ -26,13 +26,17 @@ function Swatch({ color, bgHex }: { color: ColorToken; bgHex: string }) {
       aria-label={`${color.name}: ${color.hex}. Click to copy.`}
     >
       <div className="swatch__preview" style={{ backgroundColor: color.hex }}>
-        <span className="swatch__label" style={{ color: color.hsl.l > 50 ? '#111' : '#fff' }}>
-          Aa
-        </span>
+        {copied ? (
+          <span className="swatch__copied-tooltip">Copied!</span>
+        ) : (
+          <span className="swatch__label" style={{ color: color.hsl.l > 50 ? '#111' : '#fff' }}>
+            Aa
+          </span>
+        )}
       </div>
       <div className="swatch__info">
         <span className="swatch__name">{color.name}</span>
-        <span className="swatch__hex">{copied ? 'Copied!' : color.hex}</span>
+        <span className="swatch__hex">{color.hex}</span>
         <span className="swatch__hsl">
           hsl({color.hsl.h}, {color.hsl.s}%, {color.hsl.l}%)
         </span>
@@ -57,7 +61,7 @@ export default function ColorPalette({ palette, onNext }: ColorPaletteProps) {
   return (
     <div className="color-palette">
       <div className="step-header">
-        <h2>Color Palette</h2>
+        <h2 className="gradient-text--cyan">Color Palette</h2>
         <p>6 harmonious colors derived from your brand description. Click any swatch to copy its hex value.</p>
       </div>
 

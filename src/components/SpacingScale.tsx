@@ -11,7 +11,7 @@ export default function SpacingScale({ spacing, onNext }: SpacingScaleProps) {
   return (
     <div className="spacing-scale">
       <div className="step-header">
-        <h2>Spacing Scale</h2>
+        <h2 className="gradient-text--pink">Spacing Scale</h2>
         <p>
           Base {spacing.base}px spacing system with {spacing.steps.length} steps. Every value is a
           multiple of the base unit.
@@ -52,7 +52,7 @@ export default function SpacingScale({ spacing, onNext }: SpacingScaleProps) {
               <div key={token} className="spacing-semantic__row">
                 <code>{token}</code>
                 <span>
-                  {match ? `${match.px}px (${match.rem})` : '--'} -- {desc}
+                  {match ? `${match.px}px (${match.rem})` : '--'} &mdash; {desc}
                 </span>
               </div>
             );

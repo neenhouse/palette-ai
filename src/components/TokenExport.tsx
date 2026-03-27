@@ -34,7 +34,7 @@ export default function TokenExport({ palette, typography, spacing, onReset }: T
   return (
     <div className="token-export">
       <div className="step-header">
-        <h2>Export Design Tokens</h2>
+        <h2 className="gradient-text">Export Design Tokens</h2>
         <p>Your complete design system as CSS custom properties. Copy to clipboard or download as a file.</p>
       </div>
 
@@ -56,7 +56,7 @@ export default function TokenExport({ palette, typography, spacing, onReset }: T
         </pre>
       </div>
 
-      <button className="btn btn--outline" onClick={onReset} style={{ marginTop: '1.5rem' }}>
+      <button className="btn btn--outline" onClick={onReset} style={{ marginTop: '2rem' }}>
         Start Over
       </button>
     </div>

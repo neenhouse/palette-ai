@@ -29,29 +29,58 @@ const STEPS = [
   { num: '3', title: 'Export', desc: 'Copy CSS custom properties straight into your project.' },
 ];
 
+const PREVIEW_COLORS = ['#06b6d4', '#8b5cf6', '#ec4899', '#f97316', '#22c55e', '#eab308'];
+
 export default function Landing() {
   const navigate = useNavigate();
 
   return (
     <div className="landing">
+      <nav className="landing__nav">
+        <span className="landing__logo">PaletteAI</span>
+        <button
+          className="btn btn--primary landing__nav-cta"
+          onClick={() => navigate('/app')}
+        >
+          Get Started
+        </button>
+      </nav>
+
       <section className="landing__hero">
         <span className="landing__badge">AI-Powered Design Tokens</span>
         <h1 className="landing__title">
           Describe your brand.
           <br />
-          <span className="landing__title--accent">Get a design system.</span>
+          <span className="landing__title--gradient">Get a design system.</span>
         </h1>
         <p className="landing__subtitle">
-          PaletteAI turns a plain-language brand description into production-ready design tokens --
-          colors, typography, spacing -- in seconds. No design expertise required.
+          PaletteAI turns a plain-language brand description into production-ready design
+          tokens &mdash; colors, typography, spacing &mdash; in seconds.
         </p>
-        <button className="btn btn--primary btn--large" onClick={() => navigate('/app')}>
-          Describe Your Brand
-        </button>
+        <div className="landing__hero-actions">
+          <button className="btn btn--primary btn--large" onClick={() => navigate('/app')}>
+            Describe Your Brand
+          </button>
+          <button className="btn btn--secondary btn--large" onClick={() => {
+            document.querySelector('.landing__features')?.scrollIntoView({ behavior: 'smooth' });
+          }}>
+            See How It Works
+          </button>
+        </div>
+        <div className="landing__palette-preview" aria-hidden="true">
+          {PREVIEW_COLORS.map((color) => (
+            <div
+              key={color}
+              className="palette-preview__swatch"
+              style={{ backgroundColor: color }}
+            />
+          ))}
+        </div>
       </section>
 
       <section className="landing__features">
-        <h2 className="landing__section-title">What You Get</h2>
+        <p className="landing__section-label">Features</p>
+        <h2 className="landing__section-title">Everything you need for a design system</h2>
         <div className="landing__features-grid">
           {FEATURES.map((f) => (
             <div key={f.title} className="feature-card">
@@ -64,7 +93,8 @@ export default function Landing() {
       </section>
 
       <section className="landing__how">
-        <h2 className="landing__section-title">How It Works</h2>
+        <p className="landing__section-label">How it works</p>
+        <h2 className="landing__section-title">Three steps to your design system</h2>
         <div className="landing__steps">
           {STEPS.map((s) => (
             <div key={s.num} className="how-step">
@@ -78,13 +108,14 @@ export default function Landing() {
 
       <section className="landing__cta">
         <h2>Ready to build your design system?</h2>
+        <p>No sign-up required. Start generating in seconds.</p>
         <button className="btn btn--primary btn--large" onClick={() => navigate('/app')}>
           Get Started Free
         </button>
       </section>
 
       <footer className="landing__footer">
-        <p>PaletteAI -- Built with React, TypeScript, and algorithmic color theory.</p>
+        <p>PaletteAI &mdash; Built with React, TypeScript, and algorithmic color theory.</p>
       </footer>
     </div>
   );

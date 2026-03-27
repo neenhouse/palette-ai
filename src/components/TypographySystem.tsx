@@ -23,7 +23,7 @@ export default function TypographySystem({ typography, onNext }: TypographySyste
   return (
     <div className="typography-system">
       <div className="step-header">
-        <h2>Typography System</h2>
+        <h2 className="gradient-text--violet">Typography System</h2>
         <p>
           Font pairing and modular type scale (ratio: {typography.ratio}) based on your brand mood.
         </p>
