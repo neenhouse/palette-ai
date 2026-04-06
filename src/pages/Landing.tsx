@@ -46,6 +46,7 @@ export default function Landing() {
         </button>
       </nav>
 
+      <main id="main">
       <section className="landing__hero">
         <span className="landing__badge">AI-Powered Design Tokens</span>
         <h1 className="landing__title">
@@ -114,6 +115,7 @@ export default function Landing() {
         </button>
       </section>
 
+      </main>
       <footer className="landing__footer">
         <p>PaletteAI &mdash; Built with React, TypeScript, and algorithmic color theory.</p>
       </footer>

@@ -48,7 +48,7 @@ export default function AppPage() {
         )}
       </header>
 
-      <main className="app-main" key={step}>
+      <main id="main" className="app-main" key={step}>
         {step === 0 && <BrandInput initialValue={description} onGenerate={generate} />}
         {step === 1 && palette && (
           <ColorPalette palette={palette} onNext={() => setStep(2)} />
