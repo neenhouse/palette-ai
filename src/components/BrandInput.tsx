@@ -73,7 +73,9 @@ export default function BrandInput({ initialValue, onGenerate }: BrandInputProps
       <button className="btn btn--primary" onClick={handleGenerate}>
         Generate Design System
       </button>
-      <span className="brand-input__hint">or press Cmd/Ctrl + Enter</span>
+      <span className="brand-input__hint">
+        or press <kbd>⌘</kbd> <kbd>Enter</kbd>
+      </span>
     </div>
   );
 }
