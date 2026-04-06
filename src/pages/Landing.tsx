@@ -49,7 +49,10 @@ export default function Landing() {
       <main id="main">
       <section className="landing__hero">
         <div className="landing__hero-bg" aria-hidden="true">
-          <img src="/hero-og.webp" alt="" fetchPriority="high" />
+          <video autoPlay muted loop playsInline poster="/hero-og.webp" style={{width:'100%',height:'100%',objectFit:'cover'}}>
+            <source src="/hero-og.webm" type="video/webm" />
+            <source src="/hero-og.mp4" type="video/mp4" />
+          </video>
           <div className="landing__hero-bg-overlay" />
         </div>
         <span className="landing__badge">AI-Powered Design Tokens</span>
