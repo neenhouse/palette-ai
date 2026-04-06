@@ -48,6 +48,10 @@ export default function Landing() {
 
       <main id="main">
       <section className="landing__hero">
+        <div className="landing__hero-bg" aria-hidden="true">
+          <img src="/hero-og.webp" alt="" fetchPriority="high" />
+          <div className="landing__hero-bg-overlay" />
+        </div>
         <span className="landing__badge">AI-Powered Design Tokens</span>
         <h1 className="landing__title">
           Describe your brand.
